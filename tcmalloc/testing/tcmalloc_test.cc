@@ -98,6 +98,9 @@ extern "C" int malloc_trim(size_t pad);
 extern "C" int malloc_info(int opt, FILE* fp) noexcept;
 #endif
 
+// Old glibc does not declare this function
+extern "C" void *reallocarray(void *, size_t, size_t);
+
 static const int kSizeBits = 8 * sizeof(size_t);
 static const size_t kMaxTestSize = ~static_cast<size_t>(0);
 static const size_t kMaxSignedSize = ((size_t(1) << (kSizeBits - 1)) - 1);

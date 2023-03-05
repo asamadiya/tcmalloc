@@ -77,6 +77,8 @@ constexpr size_t kStressCapacity = 4;
 constexpr size_t kShift = 18;
 typedef class TcmallocSlab<kStressSlabs> TcmallocSlab;
 
+#define KPF_ZERO_PAGE          24
+
 TcmallocSlab::Slabs* AllocSlabs(
     absl::FunctionRef<void*(size_t, std::align_val_t)> alloc,
     size_t raw_shift) {
